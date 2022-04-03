@@ -1,0 +1,176 @@
+// Method to reverse a String
+
+public static void main(String[] args) {
+
+		String s = "Akash";
+		char[] ar = s.toCharArray();
+
+		for (int i = ar.length - 1; i >= 0; i--) {
+			System.out.print(ar[i]);
+		}
+	}
+	
+// Method to identify the repeated charcter in String
+
+public static void main(String[] args) {
+
+		String s = "akash";
+		char[] ar = s.toCharArray();
+		HashMap<Character, Integer> data = new HashMap<>();
+
+		for (char cr : ar) {
+
+			System.out.print(cr);
+
+			if (data.containsKey(cr)) {
+				data.put(cr, data.get(cr) + 1);
+			} else {
+				data.put(cr, 1);
+			}
+		}
+		System.out.print(data);
+	}
+	
+// Method to print the dulipcate letters in a String
+
+public static void main(String[] args) {
+
+		String s = "aakash";
+		char[] ar = s.toCharArray();
+		HashMap<Character, Integer> data = new HashMap<>();
+
+		for (char cr : ar) {
+
+			if (data.containsKey(cr)) {
+				data.put(cr, data.get(cr) + 1);
+				System.out.println("Duplicate letters in String are: " + cr);
+			} else {
+				data.put(cr, 1);
+
+			}
+		}		
+	}
+	
+// Method to check whether the two strings are anagram or not
+
+public static void main(String[] args) {
+
+		String a = "Keep";
+		String b = "Peek";
+		String s1 = a.replaceAll("\\s", "");
+		String s2 = b.replaceAll("\\s", "");
+
+		boolean status = true;
+
+		if (s1.length() != s2.length()) {
+			status = false;
+		} else {
+			char[] ArrayS1 = s1.toLowerCase().toCharArray();
+			char[] ArrayS2 = s2.toLowerCase().toCharArray();
+
+			System.out.println("Strings before sorting them");
+
+			for (char c : ArrayS1) {
+				System.out.println("Characters in String one are :" + c);
+			}
+
+			for (char c : ArrayS2) {
+				System.out.println("Characters in String two are :" + c);
+			}
+
+			Arrays.sort(ArrayS1);
+			Arrays.sort(ArrayS2);
+
+			System.out.println("Strings after sorting them");
+
+			for (char c : ArrayS1) {
+				System.out.println("Characters in String one are :" + c);
+			}
+
+			for (char c : ArrayS2) {
+				System.out.println("Characters in String two are :" + c);
+			}
+
+			status = Arrays.equals(ArrayS1, ArrayS2);
+		}
+		if (status) {
+			System.out.println(s1 + " and " + s2 + " are anagrams");
+		} else {
+			System.out.println(s1 + " and " + s2 + " are not anagrams");
+		}
+	}
+	
+// Reverse a word in string
+public static void main(String[] args) {
+
+		String str = "how to do in java";
+		StringBuilder reverseString = new StringBuilder();
+
+		String[] words = str.split(" ");
+		
+		for (String word : words) {
+			System.out.println(word);
+			String reverseWord = new StringBuilder(word).reverse().toString();
+			reverseString.append(reverseWord + " ");
+			System.out.println(reverseString);
+		}
+
+		System.out.println(reverseString.toString()); // verify reversed string
+	}
+
+// Methos to count vowels in Stirng
+
+public static void main(String[] args) {
+
+		String s = "Akash";
+		char[] ar = s.toLowerCase().toCharArray();
+		int count = 0;
+
+		for (int i = ar.length - 1; i >= 0; i--) {
+			System.out.print(ar[i]);
+			if (ar[i] == 'a' || ar[i] == 'e' || ar[i] == 'i' || ar[i] == 'o' || ar[i] == 'u') {
+
+				count++;
+			}
+		}
+		System.out.println(count);
+	}
+	
+// Method to swap two Stirng
+ public static void main(String args[]) {  
+        String a = "Akash";  
+        String b = "Willget";  
+        System.out.println("Before swap: " + a + " " + b);  
+        a = a + b;  
+        b = a.substring(0, a.length() - b.length());  
+        a = a.substring(b.length());  
+        System.out.println("After : " + a + " " + b);  
+    } 
+
+// String sort  public static void sortString(String[] value) { 
+ 
+	public static void main(String args[]) {
+	
+	String value = "jenkins";
+  	int length = value.length;
+	String temp;
+	
+	for(int i = 0;i<length;i++)
+	{
+		for (int j = 1; j < length; j++) {
+			if (value[j - 1].compareTo(value[j]) > 0) {
+				temp = value[j - 1];
+				value[j - 1] = value[j];
+				value[j] = temp;
+			}
+		}
+	}
+
+	for(int k = 0;k<length;k++)
+	{
+
+		System.out.println(value[k]);
+	}
+}
+ 
+ 
